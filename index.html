@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8">
+ <title>Visualization (HGKC)</title>
+ <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"></link>
+ <link rel="stylesheet" type="text/css" href="css/css.css"></link>
+</head>
+
+<body>
+ <div id="horizontal">
+  <div title="All the concepts" class="left interactive barItem backgroundColor" onclick="cubeVisualization()"><i class="fa fa-sitemap"></i></div>
+  <div id="feedback">
+   <div class="barItem left" id="cubeFeedback"><i class="fa fa-cube"></i></div>
+   <div class="barItem left" id="levelsFeedback"><i class="fa fa-sitemap"></i></div>
+   <div class="barItem left" id="entityFeedback"><i class=" fa fa-minus"></i></div>
+   <div class="barItem left" id="conceptFeedback"><i class="fa fa-square"></i></div>
+   <div class="barItem left" id="granulesFeedback"><i class="fa fa-object-group"></i></div>
+   <div class="barItem left" id="puzzleFeedback"><i class="fa fa-puzzle-piece"></i></div>
+   <div class="barItem left" id="relationsFeedback"><i class="fa fa-link"></i></div>
+   <div class="barItem left" id="conceptsFeedback"><i class="fa fa-th"></i></div>
+   <div class="barItem left" id="entitiesFeedback"><i class="fa fa-bars"></i></div>
+  </div>
+  <div id="navigation">
+   <div title="Previous visualization" id="previous" class="left barItem" onclick="previousVisualization()"><i class="fa fa-arrow-left"></i></div>
+   <div title="Default visualization " class="left interactive barItem" onclick="defaultVisualization()"><i class="fa fa-home"></i></div>
+   <div title="Next visualization" id="next" class="left barItem" onclick="nextVisualization()"><i class="fa fa-arrow-right"></i></div>
+  </div>
+  <div id="sort">
+   <div title="Default sort" class="left interactive barItem" onclick="defaultSort(); itemSetActive(this)"><i class="fa fa-cube"></i></div>
+   <div title="Sort the items by granules (colors) " class="left interactive barItem" onclick="granulesSort(); itemSetActive(this)"><i class="fa fa-object-group"></i></div>
+   <div title="Sort the items by name " class="left interactive barItem" onclick="identifierSort(); itemSetActive(this)"><i class="fa fa-font"></i></div>
+   <div title="Sort the items by the number of subpuzzle pieces" class="left barItem interactive" onclick="puzzleSort(); itemSetActive(this)"><i class="fa fa-puzzle-piece"></i></div>
+   <div title="Sort the items by the number of entities " class="left interactive barItem" onclick="entitiesSort(); itemSetActive(this)"><i class="fa fa-bars"></i></div>
+   <div title="Sort the items by the number of relations " class="left interactive barItem" onclick="relationsSort(); itemSetActive(this)"><i class="fa fa-link"></i></div>
+   <div title="Shuffle the items " class="sort left interactive barItem" onclick="shuffleSort(); itemSetActive(this)"><i class="fa fa-random"></i></div>
+  </div>
+  <div class="right barItem color"><i class="fa fa-ellipsis-v"></i></div>
+  <div class="clear"></div>
+ </div>
+ <div id="vertical"></div>
+ <div id="containers">
+  <h1 class="loading">LOADING... Please wait...</h1>
+	</div>
+ <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+ <script type="text/javascript" src="data/cube.js"></script>
+ <script type="text/javascript" src="js/script.js"></script>
+ <script>
+  defaultVisualization()
+ </script>
+</body>
+
+</html>
